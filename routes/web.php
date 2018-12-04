@@ -11,13 +11,9 @@
 |
 */
 
-//Route::get('/', function () {
-   // return view('welcome');
-//});
 
-  
 
-//Route::get('generate/payment', 'PaymentsController@store')->name('generate.payment'); 
+Route::get('/', 'PaymentmethodsController@index')->name('home'); 
 
 Route::get('create/card', 'CardsController@create')->name('card.create'); 
 
@@ -36,5 +32,5 @@ Route::post('card/generate/store', 'CardgeneratesController@store')->name('card.
 Route::post('bank/generate/store', 'BankgeneratesController@store')->name('bank.generate.store'); 
 
 
-Route::get('/', 'PaymentmethodsController@index')->name('home'); 
+
 

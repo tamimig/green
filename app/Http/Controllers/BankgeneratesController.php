@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Bankgenerate; 
+use App\Http\Requests;  
+use App\Http\Resources\Bankgenerate as BankgenerateResource; 
 
 class BankgeneratesController extends Controller
 {
@@ -18,6 +20,11 @@ class BankgeneratesController extends Controller
         
     }
 
+    public function display()
+    {
+        return BankgenerateResource::collection(Bankgenerate::all()); 
+
+    }
   
 
     /**

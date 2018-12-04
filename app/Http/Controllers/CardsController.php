@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Card; 
+use App\Card;  
+use App\Http\Requests;  
+use App\Http\Resources\Card as CardResource;
 
 class CardsController extends Controller
 {
@@ -14,7 +16,7 @@ class CardsController extends Controller
      */
     public function index()
     {
-        //
+        return CardResource::collection(Card::all()); 
     }
 
     /**

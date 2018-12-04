@@ -18,3 +18,27 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
+// List of payment options
+Route::get('paymentoptions', 'PaymentmethodsController@display')->name('paymentoptions');
+
+// Generate payment page for the bank 
+
+Route::get('bankpage', 'BanksController@index')->name('bankpage'); 
+
+
+// Generate payment page for the credit card 
+
+Route::get('cardpage', 'CardsController@index')->name('cardpage'); 
+
+//Bank transaction status
+
+Route::get('bank/transaction', 'BankgeneratesController@display')->name('bank.transaction'); 
+
+
+// Card transaction status
+
+Route::get('card/transaction', 'CardgeneratesController@index')->name('card.transaction'); 
+
+
+
+

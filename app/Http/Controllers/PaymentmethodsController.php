@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests; 
+use App\Paymentmethod; 
+use App\Http\Resources\Paymentmethod as PaymentmethodResource; 
 
 class PaymentmethodsController extends Controller
 {
@@ -14,6 +17,12 @@ class PaymentmethodsController extends Controller
     public function index()
     {
         return view('paymentmethod.index');
+    }
+
+    // collection of paymentmethod as a resource
+    public function display()
+    {
+        return PaymentmethodResource::collection(Paymentmethod::all()); 
     }
 
     /**

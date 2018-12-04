@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Http\Resources;
+
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class Paymentmethod extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    public function toArray($request)
+    {
+       // return parent::toArray($request);
+
+        return [
+
+            'id' => $this->id, 
+
+            'Credit Card' => $this->credit_card, 
+
+            'Bank' => $this->bank 
+
+        ];
+    }
+}

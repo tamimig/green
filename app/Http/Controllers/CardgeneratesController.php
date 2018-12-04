@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cardgenerate; 
+use App\Cardgenerate;  
+use App\Http\Requests;  
+use App\Http\Resources\Cardgenerate as CardgenerateResource; 
 
 class CardgeneratesController extends Controller
 {
@@ -14,8 +16,9 @@ class CardgeneratesController extends Controller
      */
     public function index()
     {
-        //
+         return CardgenerateResource::collection(Cardgenerate::all()); 
     }
+
 
     /**
      * Show the form for creating a new resource.
